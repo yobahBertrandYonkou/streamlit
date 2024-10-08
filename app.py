@@ -5,19 +5,19 @@ from datetime import datetime, timedelta
 from io import BytesIO
 import os
 import base64
-import yaml
+# import yaml
 import zipfile
 from utils.TimeSeriesForecast import TimeSeriesForecast  # Your forecasting backend class
 from PIL import Image
 import markdown_content as mc
 
 # Load configuration file
-with open("config.yaml", "r") as f:
-    config = yaml.safe_load(f)
+# with open("config.yaml", "r") as f:
+#     config = yaml.safe_load(f)
 
 # Assign variables from the configuration
-project_name = config["project_name"]
-sidebar_title = config["sidebar_title"]
+# project_name = config["project_name"]
+# sidebar_title = config["sidebar_title"]
 preloaded_file = "utils/ReceivedBilledVolumesData.xlsx"  # Preloaded Excel file
 
 # Set up page configuration
