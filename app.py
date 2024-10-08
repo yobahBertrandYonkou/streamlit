@@ -16,8 +16,8 @@ import markdown_content as mc
 #     config = yaml.safe_load(f)
 
 # Assign variables from the configuration
-# project_name = config["project_name"]
-# sidebar_title = config["sidebar_title"]
+project_name = "Revenue forecasting"
+sidebar_title = "Sidebar attributes"
 preloaded_file = "utils/ReceivedBilledVolumesData.xlsx"  # Preloaded Excel file
 
 # Set up page configuration
