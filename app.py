@@ -10,15 +10,18 @@ import zipfile
 from utils.TimeSeriesForecast import TimeSeriesForecast  # Your forecasting backend class
 from PIL import Image
 import markdown_content as mc
+import os, sys, pathlib
+
+parent_dir = str(pathlib.Path(__file__).parent.resolve())
 
 # Load configuration file
-with open("config.yaml", "r") as f:
+with open(parent_dir + "/config.yaml", "r") as f:
     config = yaml.safe_load(f)
 
 # Assign variables from the configuration
 project_name = config["project_name"]
 sidebar_title = config["sidebar_title"]
-preloaded_file = "utils/ReceivedBilledVolumesData.xlsx"  # Preloaded Excel file
+preloaded_file = parent_dir + "/utils/ReceivedBilledVolumesData.xlsx"  # Preloaded Excel file
 
 # Set up page configuration
 st.set_page_config(
@@ -135,7 +138,7 @@ with app_tab:
         st.subheader("Download Sample Data")
 
         # Load the sample Excel file
-        sample_file_path = "ReceivedBilledVolumesData.xlsx"
+        sample_file_path = parent_dir + "/ReceivedBilledVolumesData.xlsx"
 
         @st.cache_data
         def load_sample_file(file_path):
